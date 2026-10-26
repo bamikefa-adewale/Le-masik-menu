@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — warm hospitality palette: ivory surfaces, espresso text,
+ * one brass/gold accent. Serif display (Cormorant Garamond) paired with a
+ * clean sans (Karla), loaded via <link> in src/routes/__root.tsx.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-karla), "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.977 0.009 88);
+  --foreground: oklch(0.26 0.035 55);
+  --card: oklch(0.994 0.004 90);
+  --card-foreground: oklch(0.26 0.035 55);
+  --popover: oklch(0.994 0.004 90);
+  --popover-foreground: oklch(0.26 0.035 55);
+  --primary: oklch(0.31 0.05 55);
+  --primary-foreground: oklch(0.97 0.012 88);
+  --secondary: oklch(0.945 0.017 85);
+  --secondary-foreground: oklch(0.31 0.05 55);
+  --muted: oklch(0.945 0.017 85);
+  --muted-foreground: oklch(0.49 0.03 60);
+  --accent: oklch(0.93 0.028 88);
+  --accent-foreground: oklch(0.26 0.035 55);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --border: oklch(0.9 0.02 85);
+  --input: oklch(0.9 0.02 85);
+  --ring: oklch(0.72 0.1 82);
+  --gold: oklch(0.8 0.105 85);
+  --gold-deep: oklch(0.55 0.095 70);
+}
+
+.dark {
+  --background: oklch(0.185 0.02 55);
+  --foreground: oklch(0.95 0.012 88);
+  --card: oklch(0.235 0.025 55);
+  --card-foreground: oklch(0.95 0.012 88);
+  --popover: oklch(0.235 0.025 55);
+  --popover-foreground: oklch(0.95 0.012 88);
+  --primary: oklch(0.85 0.09 85);
+  --primary-foreground: oklch(0.2 0.03 55);
+  --secondary: oklch(0.28 0.025 55);
+  --secondary-foreground: oklch(0.95 0.012 88);
+  --muted: oklch(0.28 0.025 55);
+  --muted-foreground: oklch(0.7 0.03 80);
+  --accent: oklch(0.3 0.03 60);
+  --accent-foreground: oklch(0.95 0.012 88);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.75 0.1 82);
+  --gold: oklch(0.8 0.105 85);
+  --gold-deep: oklch(0.75 0.1 80);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Hide scrollbars on the mobile category tab strip while keeping scroll. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* /qr table card: when printing, show only the card. */
+@media print {
+  body {
+    background: white;
+  }
+}
