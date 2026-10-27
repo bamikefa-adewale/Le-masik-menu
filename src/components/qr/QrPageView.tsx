@@ -19,7 +19,7 @@ export function QrPageView() {
   const [menuUrl, setMenuUrl] = useState("");
 
   useEffect(() => {
-    const url = hotelConfig.publicMenuUrl || `${window.location.origin}/menu`;
+    const url = hotelConfig.publicMenuUrl || `${window.location.origin}/`;
     setMenuUrl(url);
     let cancelled = false;
     void import("qrcode")
@@ -58,19 +58,19 @@ export function QrPageView() {
           aria-label={`QR table card for ${hotelConfig.name}`}
           className="flex w-full max-w-sm flex-col items-center gap-5 rounded-3xl border border-border bg-card px-8 py-10 text-center shadow-xl"
         >
-          <img src={crestSrc} alt="" width={56} height={56} className="size-14" />
+          <img src={crestSrc} alt="" width={56} height={56} className="size-16 rounded-2xl bg-white p-1.5 border border-border/60 shadow-xs object-contain" />
           <div>
             <p className="font-display text-2xl font-semibold">{hotelConfig.name}</p>
             <p className="mt-1 text-sm text-muted-foreground">{hotelConfig.location}</p>
           </div>
           <p className="font-display text-lg text-balance italic">
-            Scan to view our drinks menu
+            Scan to view our hotel & menu
           </p>
           <div className="rounded-2xl border border-border bg-background p-3">
             {qrDataUrl ? (
               <img
                 src={qrDataUrl}
-                alt={`QR code linking to the ${hotelConfig.name} drinks menu`}
+                alt={`QR code linking to the ${hotelConfig.name} homepage`}
                 width={220}
                 height={220}
               />

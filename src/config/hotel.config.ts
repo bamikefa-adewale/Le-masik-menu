@@ -43,8 +43,8 @@ export const hotelConfig = {
 
   /**
    * Absolute URL printed under the QR code on the /qr table card.
-   * Set to your deployed URL (e.g. "https://menu.lemasikhotel.com") after
-   * publishing; when empty, the /qr page falls back to the current origin.
+   * Set to your deployed URL (e.g. "https://lemasikhotel.com") after
+   * publishing; when empty, the /qr page falls back to the current origin homepage ("/").
    */
   publicMenuUrl: "",
 

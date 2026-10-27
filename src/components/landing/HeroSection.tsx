@@ -37,7 +37,7 @@ export function HeroSection() {
             alt=""
             width={32}
             height={32}
-            className="size-8 rounded-full ring-1 ring-white/30 backdrop-blur-sm"
+            className="size-8 rounded-lg bg-white object-contain p-0.5 shadow-xs ring-1 ring-white/30"
           />
           <span className="font-display text-base sm:text-lg font-bold text-white tracking-wide">
             {hotelConfig.shortName}
@@ -99,11 +99,11 @@ export function HeroSection() {
         >
           <img
             src={crestSrc}
-            alt={`${hotelConfig.name} crest`}
+            alt={`${hotelConfig.name} logo`}
             width={64}
             height={64}
             loading="eager"
-            className="h-14 w-14 rounded-full bg-background/10 p-1 ring-1 ring-white/30 backdrop-blur-sm sm:h-16 sm:w-16"
+            className="h-14 w-14 rounded-2xl bg-white p-1.5 shadow-lg ring-1 ring-white/30 sm:h-16 sm:w-16 object-contain"
           />
           <div>
             <p className="text-xs font-semibold tracking-[0.3em] text-gold uppercase">

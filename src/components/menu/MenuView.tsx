@@ -112,7 +112,7 @@ export function MenuView() {
                   <div className="flex size-8 items-center justify-center rounded-full bg-secondary text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground sm:size-9">
                     <ArrowLeft className="size-4" aria-hidden />
                   </div>
-                  <img src={crestSrc} alt="" width={28} height={28} className="size-7 rounded-full sm:size-8" />
+                  <img src={crestSrc} alt="" width={28} height={28} className="size-7 rounded-lg bg-white object-contain p-0.5 border border-border/50 sm:size-8" />
                   <div className="flex flex-col">
                     <span className="font-display text-base font-bold leading-tight text-foreground sm:text-lg">
                       {hotelConfig.shortName}
@@ -232,7 +232,7 @@ export function MenuView() {
             >
               <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <div className="flex items-center gap-2.5">
-                  <img src={crestSrc} alt="" className="size-8 rounded-full" />
+                  <img src={crestSrc} alt="" className="size-8 rounded-lg bg-white object-contain p-0.5 border border-border/50" />
                   <div>
                     <h2 className="font-display text-base font-bold text-foreground">{hotelConfig.name}</h2>
                     <p className="text-xs text-muted-foreground">{hotelConfig.tagline}</p>
